@@ -6,8 +6,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 158197,
       "ENERGY STAR 1-100 SCORE": "Required benchmarking information missing",
       "ENERGY EFFICIENCY GRADE": "F",
-      "latitude": 40.70921,
-      "longitude": -73.99481
+      "Address": "10 SOUTH STREET, 10004",
+      "latitude": 40.701047,
+      "longitude": -74.011654
     },
     {
       "10-Digit BBL": 1000047501,
@@ -16,8 +17,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 2542563,
       "ENERGY STAR 1-100 SCORE": 63,
       "ENERGY EFFICIENCY GRADE": "C",
-      "latitude": 40.70272,
-      "longitude": -73.985191
+      "Address": "1 WATER STREET, 10004",
+      "latitude": 40.62743,
+      "longitude": -74.07468
     },
     {
       "10-Digit BBL": 1000050010,
@@ -26,8 +28,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 1016406,
       "ENERGY STAR 1-100 SCORE": 91,
       "ENERGY EFFICIENCY GRADE": "A",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "115 BROAD STREET, 10004",
+      "latitude": 40.702717,
+      "longitude": -74.010721
     },
     {
       "10-Digit BBL": 1000057501,
@@ -36,8 +39,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 1354691,
       "ENERGY STAR 1-100 SCORE": 85,
       "ENERGY EFFICIENCY GRADE": "A",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "125 BROAD STREET, 10004",
+      "latitude": 40.702339,
+      "longitude": -74.010517
     },
     {
       "10-Digit BBL": 1000080039,
@@ -46,8 +50,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 46724,
       "ENERGY STAR 1-100 SCORE": "Required benchmarking information missing",
       "ENERGY EFFICIENCY GRADE": "F",
-      "latitude": 40.702697,
-      "longitude": -73.988049
+      "Address": "32 PEARL STREET, 10004",
+      "latitude": 40.703135,
+      "longitude": -74.01231
     },
     {
       "10-Digit BBL": 1000080051,
@@ -56,8 +61,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 102407,
       "ENERGY STAR 1-100 SCORE": 26,
       "ENERGY EFFICIENCY GRADE": "D",
-      "latitude": 40.70272,
-      "longitude": -73.985191
+      "Address": "6 WATER STREET, 10004",
+      "latitude": 40.703131,
+      "longitude": -73.993706
     },
     {
       "10-Digit BBL": 1000087501,
@@ -66,8 +72,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 169061,
       "ENERGY STAR 1-100 SCORE": 32,
       "ENERGY EFFICIENCY GRADE": "D",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "39 WHITEHALL STREET, 10004",
+      "latitude": 40.702948,
+      "longitude": -74.012665
     },
     {
       "10-Digit BBL": 1000090001,
@@ -76,8 +83,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 692431,
       "ENERGY STAR 1-100 SCORE": 83,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "34 WHITEHALL STREET, 10004",
+      "latitude": 40.702765,
+      "longitude": -74.013349
     },
     {
       "10-Digit BBL": 1000090014,
@@ -86,8 +94,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 544015,
       "ENERGY STAR 1-100 SCORE": 75,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.70261,
-      "longitude": -74.01368
+      "Address": "17 STATE STREET, 10004",
+      "latitude": 40.702899,
+      "longitude": -74.013979
     },
     {
       "10-Digit BBL": 1000090029,
@@ -96,8 +105,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 896956,
       "ENERGY STAR 1-100 SCORE": 56,
       "ENERGY EFFICIENCY GRADE": "C",
-      "latitude": 40.70261,
-      "longitude": -74.01368
+      "Address": "24 STATE STREET, 10004",
+      "latitude": 40.703372,
+      "longitude": -74.013771
     },
     {
       "10-Digit BBL": 1000100014,
@@ -106,8 +116,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 365792,
       "ENERGY STAR 1-100 SCORE": 82,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "33 WHITEHALL STREET, 10004",
+      "latitude": 40.70338,
+      "longitude": -74.012641
     },
     {
       "10-Digit BBL": 1000100016,
@@ -116,8 +127,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 336025,
       "ENERGY STAR 1-100 SCORE": 79,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "90 BROAD STREET, 10004",
+      "latitude": 40.703804,
+      "longitude": -74.01196
     },
     {
       "10-Digit BBL": 1000100023,
@@ -126,8 +138,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 321994,
       "ENERGY STAR 1-100 SCORE": 87,
       "ENERGY EFFICIENCY GRADE": "A",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "1 WHITEHALL STREET, 10004",
+      "latitude": 40.703816,
+      "longitude": -74.012776
     },
     {
       "10-Digit BBL": 1000110021,
@@ -136,8 +149,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 361710,
       "ENERGY STAR 1-100 SCORE": 80,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.702091,
-      "longitude": -74.012016
+      "Address": "80 BROAD STREET, 10004",
+      "latitude": 40.624933,
+      "longitude": -74.077876
     },
     {
       "10-Digit BBL": 1000130001,
@@ -146,8 +160,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 180646,
       "ENERGY STAR 1-100 SCORE": 87,
       "ENERGY EFFICIENCY GRADE": "A",
-      "latitude": 40.695467,
-      "longitude": -73.932078
+      "Address": "1 BROADWAY, 10004",
+      "latitude": 40.704959,
+      "longitude": -74.014611
     },
     {
       "10-Digit BBL": 1000130005,
@@ -156,8 +171,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 434220,
       "ENERGY STAR 1-100 SCORE": 92,
       "ENERGY EFFICIENCY GRADE": "A",
-      "latitude": 40.695467,
-      "longitude": -73.932078
+      "Address": "11 BROADWAY, 10004",
+      "latitude": 40.76774,
+      "longitude": -73.93529
     },
     {
       "10-Digit BBL": 1000130027,
@@ -166,8 +182,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 809401,
       "ENERGY STAR 1-100 SCORE": 65,
       "ENERGY EFFICIENCY GRADE": "C",
-      "latitude": 40.695467,
-      "longitude": -73.932078
+      "Address": "25 BROADWAY, 10004",
+      "latitude": 40.76316,
+      "longitude": -73.92727
     },
     {
       "10-Digit BBL": 1000150022,
@@ -176,8 +193,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 335746,
       "ENERGY STAR 1-100 SCORE": 29,
       "ENERGY EFFICIENCY GRADE": "D",
-      "latitude": 40.68253,
-      "longitude": -73.909294
+      "Address": "25 BROADWAY, 10004",
+      "latitude": 40.76316,
+      "longitude": -73.92727
     },
     {
       "10-Digit BBL": 1000157501,
@@ -186,8 +204,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 1402831,
       "ENERGY STAR 1-100 SCORE": 81,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.706009,
-      "longitude": -74.018602
+      "Address": "21 WEST STREET, 10006",
+      "latitude": 40.74102,
+      "longitude": -73.991767
     },
     {
       "10-Digit BBL": 1000157502,
@@ -196,8 +215,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 259076,
       "ENERGY STAR 1-100 SCORE": 78,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.68253,
-      "longitude": -73.909294
+      "Address": "20 WEST STREET, 10004",
+      "latitude": 40.74008,
+      "longitude": -73.992486
     },
     {
       "10-Digit BBL": 1000160015,
@@ -206,8 +226,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 238165,
       "ENERGY STAR 1-100 SCORE": 80,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.706009,
-      "longitude": -74.018602
+      "Address": "50 BATTERY PLACE, 10280",
+      "latitude": 40.706498,
+      "longitude": -74.018129
     },
     {
       "10-Digit BBL": 1000160020,
@@ -216,8 +237,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 230765,
       "ENERGY STAR 1-100 SCORE": 82,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.706009,
-      "longitude": -74.018602
+      "Address": "70 BATTERY PLACE, 10280",
+      "latitude": 40.707112,
+      "longitude": -74.017676
     },
     {
       "10-Digit BBL": 1000160100,
@@ -226,8 +248,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 1881621,
       "ENERGY STAR 1-100 SCORE": 72,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.710949,
-      "longitude": -74.016495
+      "Address": "345 SOUTH END AVENUE, 10280",
+      "latitude": 40.710541,
+      "longitude": -74.01679
     },
     {
       "10-Digit BBL": 1000160120,
@@ -236,8 +259,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 1501878,
       "ENERGY STAR 1-100 SCORE": 86,
       "ENERGY EFFICIENCY GRADE": "A",
-      "latitude": 40.707406,
-      "longitude": -74.008185
+      "Address": "200 LIBERTY STREET, 10281",
+      "latitude": 40.710644,
+      "longitude": -74.015611
     },
     {
       "10-Digit BBL": 1000160125,
@@ -246,8 +270,9 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 2267925,
       "ENERGY STAR 1-100 SCORE": 77,
       "ENERGY EFFICIENCY GRADE": "B",
-      "latitude": 40.707406,
-      "longitude": -74.008185
+      "Address": "225 LIBERTY STREET, 10280",
+      "latitude": 40.712481,
+      "longitude": -74.015399
     },
     {
       "10-Digit BBL": 1000160140,
@@ -256,6 +281,7 @@ var ratingData = [
       "DOF GROSS SQUARE FOOTAGE": 2233692,
       "ENERGY STAR 1-100 SCORE": "Required benchmarking information missing",
       "ENERGY EFFICIENCY GRADE": "F",
+      "Address": "200 VESEY STREET, 10281",
       "latitude": 40.713573,
       "longitude": -74.014883
     }
