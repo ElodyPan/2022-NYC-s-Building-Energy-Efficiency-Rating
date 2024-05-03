@@ -12,15 +12,11 @@ var map = new mapboxgl.Map({
 });
 
 map.on('style.load', () => {
-    // Insert the layer beneath any symbol layer.
     const layers = map.getStyle().layers;
     const labelLayerId = layers.find(
         (layer) => layer.type === 'symbol' && layer.layout['text-field']
     ).id;
 
-    // The 'building' layer in the Mapbox Streets
-    // vector tileset contains building height data
-    // from OpenStreetMap.
     map.addLayer(
         {
             'id': 'add-3d-buildings',
@@ -32,9 +28,6 @@ map.on('style.load', () => {
             'paint': {
                 'fill-extrusion-color': '#aaa',
 
-                // Use an 'interpolate' expression to
-                // add a smooth transition effect to
-                // the buildings as the user zooms in.
                 'fill-extrusion-height': [
                     'interpolate',
                     ['linear'],
@@ -67,11 +60,11 @@ map.on('load', function () {
         el.style.backgroundColor = getGradeColor(building["ENERGY EFFICIENCY GRADE"]);
 
         var popupContent = `
-            <h3>${building["STREET NAME"]}</h3>
-            <p><strong>DOF Gross Square Footage:</strong> ${building["DOF GROSS SQUARE FOOTAGE"].toLocaleString()} sq ft</p>
-            <p><strong>Energy Star Score:</strong> ${building["ENERGY STAR 1-100 SCORE"]}</p>
-            <p><strong>Energy Efficiency Grade:</strong> ${building["ENERGY EFFICIENCY GRADE"]}</p>
-        `;
+                <h3>${building["STREET NAME"]}</h3>
+                <p><strong>DOF Gross Square Footage:</strong> ${building["DOF GROSS SQUARE FOOTAGE"].toLocaleString()} sq ft</p>
+                <p><strong>Energy Star Score:</strong> ${building["ENERGY STAR 1-100 SCORE"]}</p>
+                <p><strong>Energy Efficiency Grade:</strong> ${building["ENERGY EFFICIENCY GRADE"]}</p>
+            `;
 
         // Create a popup
         var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(popupContent);
@@ -86,12 +79,16 @@ map.on('load', function () {
 
 function getGradeColor(grade) {
     switch (grade) {
-        case 'A': return '#08922d'; // dark green
-        case 'B': return '#6fd884'; // light green
-        case 'C': return '#e6f4ea'; // pale green
-        case 'D': return '#c3ab91'; // beige
-        case 'F': return '#e1861d'; // orange
-        case 'N': return '#5b5957'; // dark grey
-        default:  return '#ffffff'; // white for undefined grades
+        case 'A': return '#238b45';
+        case 'B': return '#74c476';
+        case 'C': return '#bae4b3';
+        case 'D': return '#edf8fb';
+        case 'F': return '#edf8e9';
+        case 'N': return '#171716';
+        default: return '#171716';
     }
-}
+};
+
+window.addEventListener('resize', () => {
+    map.resize(); // This Mapbox GL JS method re-adjusts the map to fit its container
+});
