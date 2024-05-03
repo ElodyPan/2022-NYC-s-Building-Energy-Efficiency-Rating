@@ -1,54 +1,71 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Display buildings in 3D</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NYC's Building Energy Efficiency Rating</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    
 </head>
 
 <body>
-    <div id="sidebar">
-        <div class="header">
-            <span class="green-emoji">🟩🏙️</span>
-            <h1>2022 NYC's Building Energy Efficiency Rating</h1>
-        </div>
-        <p>An energy efficiency score is the Energy Star Rating that a building earns using the United States Environmental Protection Agency online benchmarking tool, Energy Star Portfolio Manager, to compare building energy performance to similar buildings in similar climates. </p>
-        <p>As per Local Law 95 of 2019 grades based on Energy Star energy efficiency scores will be assigned as follows</p>
-        <p><strong>Click a marker for details</strong></p>
-        <div class="legend">
-            <div>
-                <span class="legend-key" style="background-color: #08922d;"></span>
-                <span>A: score is equal to or greater than 85</span>
-            </div>
-            <div>
-                <span class="legend-key" style="background-color: #6fd884;"></span>
-                <span>B: score is equal to or greater than 70 but less than 85</span>
-            </div>
-            <div>
-                <span class="legend-key" style="background-color: #e6f4ea;"></span>
-                <span>C: score is equal to or greater than 55 but less than 70</span>
-            </div>
-            <div>
-                <span class="legend-key" style="background-color: #c3ab91;"></span>
-                <span>D: score is less than 55</span>
-            </div>
-            <div>
-                <span class="legend-key" style="background-color: #e1861d;"></span>
-                <span>F: for buildings that didn’t submit required benchmarking information</span>
-            </div>
-            <div>
-                <span class="legend-key" style="background-color: #5b5957;"></span>
-                <span>N: for buildings exempted from benchmarking or not covered by the Energy Star program.</span>
-            </div>
-        </div>
+    <div id="fullSizeHeader">
+        <img src="images/building-efficiency-header.png" alt="Header Image">
+        <h1 class="webpage-title">NYC's Building Energy Efficiency Rating</h1>
     </div>
-    <div id="map-container"></div>
+
+    <nav>
+        <div onclick="toggleMobileMenu()"></div>
+        <ul id="nav-menu">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#methodology">Methodology</a></li>
+            <li><a href="#Scope">Scope</a></li>
+            <li><a href="#mapSection">Efficiency Map</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>The New York City Department of Buildings (NYCDOB) announced in September 2020, that it will implement a building energy efficiency rating that will require all New York City buildings 25,000 square feet or larger to post an energy-efficient letter grade sign at their entrances. The letter grade assignments are a feature of the Climate Mobilization Act, otherwise known as Local Law 97. This ambitious initiative requires buildings 25,000 square feet or larger to reduce their carbon emissions by 40 percent by 2030, and by 80 percent by 2050. The Department of Buildings will begin enforcing these carbon caps in 2024.</p>
+        </section>
+        <section id="methodology">
+            <h2>Methodology</h2>
+            <p>The building energy efficiency rating is based on the Environmental Protection Agency’s (EPA) online benchmarking tool, called the Energy Star Portfolio Manager. It is an online tool that is used to measure energy, water consumption, and greenhouse gas emissions. The tool can be used for one building or several buildings. 
+
+                According to the guidelines set out by the NYC Department of Buildings at NYC.gov:
+                
+                An energy efficiency score is the Energy Star Rating that a building earns using the United States Environmental Protection Agency online benchmarking tool, Energy Star Portfolio Manager, to compare building energy performance to similar buildings in similar climates. </p>
+        </section>
+        <section id="Scope">
+            <h2>Scope</h2>
+            <p>Statistically, this legislation will affect around 50,000 buildings in New York City and nearly 60 percent of the city’s building area, according to the Urban Green Council Local Law 97 summary. The summary also states that buildings are responsible for two-thirds of New York City’s annual emissions, with the other third coming primarily from on the road transportation. This has a substantial impact on energy production. 
+
+                The level of transparency offered by the building energy efficiency rating will show the energy efficiency or inefficiency of a building. The New York City Council Climate Mobilization Act has identified that buildings emit different amounts of greenhouse gases, depending on their usage. The top 5 building types, greater than 50,000 square feet, are: Residential (36%), Business (26%), Institutional (12%), Hospital (7%), and Education (7%). Although in terms of average greenhouse gas emission intensity by use, for buildings greater than 25,000 square feet, hospitals emit the most greenhouse gasses per square foot. Hospitals use energy-intensive system such as ventilation, required by law for constant airflow.  Coupled with other energy-intensive devices, including MRI machines and ventilators, cause an increase in emissions. </p>
+        </section>
+        <section id="mapSection">
+            <h2>Building Energy Efficiency Map</h2>
+            <p>you can click the marker for details</p>
+            <div id="map-container">
+                <div class="legend">
+                    <ul class="legend-list">
+                        <div>The ENERGY STAR score with its corresponding Ratings: </div>
+                        <li><span class="legend-key" style="background-color: #238b45;"></span>A: score is >= 85</li>
+                        <li><span class="legend-key" style="background-color: #74c476;"></span>B: score is 70-84</li>
+                        <li><span class="legend-key" style="background-color: #bae4b3;"></span>C: score is 55-69</li>
+                        <li><span class="legend-key" style="background-color: #edf8e9;"></span>D: score is < 55</li>
+                        <li><span class="legend-key" style="background-color: #d8b365;"></span>F: No data</li>
+                        <li><span class="legend-key" style="background-color: #171716;"></span>N: Exempt or Not Covered
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
     <script src="rating-data.js"></script>
     <script src="scripts.js"></script>
 </body>
+
 </html>
