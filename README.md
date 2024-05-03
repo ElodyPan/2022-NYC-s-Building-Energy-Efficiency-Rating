@@ -9,9 +9,8 @@ This project is part of an ongoing effort for the NYU Web Mapping class, focusin
 - **Data Processing**: Data is being converted from PDFs to Excel sheets, then to JSON format. Additionally, there is an ongoing effort to convert BBL data to accurate geographic coordinates (longitude and latitude) or possibly to upgrade to building zone-specific data.
 
 ## Challenges Faced
-- **Data Conversion**: One of the primary challenges has been converting the data accurately from PDFs to a usable digital format. Ensuring the integrity of the data during this process has been both time-consuming and technically demanding.
-- **Geocoding**: Translating BBL data into precise geographic coordinates has presented significant difficulties, as discrepancies in data have led to inaccuracies in the mapped locations.
-- **Web Mapping**: Integrating the data into a functional and interactive web map involves numerous technical aspects, from backend data handling to frontend user interface design, each with its own set of challenges.
+- **Geo-Referencing Building Data**: One of the significant hurdles I'm currently facing is mapping the BBL (Borough Block and Lot) identifiers to their corresponding geographic coordinates (latitude and longitude). While I have obtained the building data for the years 2019 to 2020 in CSV format, the integration of this data with geospatial maps has been challenging. The BBL identifiers need to be accurately converted to geo-coordinates to visualize the data on a map effectively.
+- **Data Acquisition via APIs**: I am exploring various APIs to supplement the existing data with more detailed information. This involves determining the most effective and efficient API options for extracting data related to specific buildings or lots.
 
 ## Motivation
 My interest in this project stems from a commitment to promoting sustainable building practices. By making energy efficiency data accessible and understandable, I hope to encourage building owners and tenants to invest in energy-saving measures. This project not only helps in academic learning but also contributes to environmental sustainability by highlighting areas for energy efficiency improvements.
