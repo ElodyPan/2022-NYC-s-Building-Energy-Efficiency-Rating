@@ -15,9 +15,6 @@ This project is part of an ongoing effort for the NYU Web Mapping class, focusin
 - **Geo-Referencing Building Data**: One of the significant hurdles I'm currently facing is mapping the BBL (Borough Block and Lot) identifiers to their corresponding geographic coordinates (latitude and longitude). While I have obtained the building data for the years 2019 to 2020 in CSV format, the integration of this data with geospatial maps has been challenging. The BBL identifiers need to be accurately converted to geo-coordinates to visualize the data on a map effectively.
 - **Data Acquisition via APIs**: I am exploring various APIs to supplement the existing data with more detailed information. This involves determining the most effective and efficient API options for extracting data related to specific buildings or lots.
 
-
-
 ## Future Goals
-- **Utilizing Geocoding APIs**: To resolve the issue with geo-referencing, I plan to use geocoding APIs that can convert BBL into latitude and longitude. APIs such as the NYC Geoclient API or commonly used services like Google Maps Geocoding API are potential options. This will allow for accurate placement of buildings on the map.
 - **Data Expansion and Trend Analysis**: Moving forward, I intend to expand the dataset beyond the current years and include a broader range of data sorted by year. This will enable us to analyze trends in building energy efficiency over time, providing valuable insights into progress and areas that require more attention.
 
