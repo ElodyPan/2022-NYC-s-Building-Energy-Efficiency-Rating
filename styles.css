@@ -1,3 +1,4 @@
+/* general styles for the page */
 body {
   background-color: #f5f5f5;
   margin: 0;
@@ -5,6 +6,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* header styles */
 #fullSizeHeader {
   position: relative;
   text-align: center;
@@ -26,6 +28,7 @@ body {
   border-radius: 5px;
 }
 
+/* navigation menu styles */
 #nav-menu {
   display: flex;
   justify-content: center;
@@ -33,6 +36,10 @@ body {
   padding: 10px;
   background-color: #333;
   margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 #nav-menu li {
@@ -44,18 +51,22 @@ body {
   text-decoration: none;
 }
 
+/* main content styles */
 main {
-  padding: 20px;
+  padding: 80px 20px 20px 20px; /* Adjusted padding to account for fixed nav */
 }
 
+/* section styles */
 #overview,
 #methodology,
-#Scope {
-  margin-bottom: 40px;
+#scope,
+#mapSection {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px; /* Adjusted scroll margin top to prevent heading cutoff */
 }
 
+/* map section styles */
 #mapSection {
-  margin-top: 40px;
   position: relative;
 }
 
@@ -70,6 +81,7 @@ main {
   flex-grow: 1;
 }
 
+/* marker styles */
 .marker {
   width: 10px;
   height: 10px;
@@ -77,6 +89,7 @@ main {
   cursor: pointer;
 }
 
+/* controls styles */
 .controls {
   background: rgba(255, 255, 255, 0.8);
   padding: 10px;
@@ -86,7 +99,7 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   position: absolute;
-  top: 10px;
+  top: 50px;
   left: 10px;
 }
 
@@ -94,6 +107,7 @@ main {
   margin-top: 10 px;
 }
 
+/* button group styles */
 .button-group {
   display: flex;
   flex-direction: column;
@@ -137,6 +151,7 @@ main {
   box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
 }
 
+/* legend styles */
 .legend-list {
   margin-top: 10px;
   list-style: none;
