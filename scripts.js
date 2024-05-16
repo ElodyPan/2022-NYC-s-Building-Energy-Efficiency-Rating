@@ -1,94 +1,117 @@
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiZWxvZHlwIiwiYSI6ImNsdWx2dWQzaDBuaGkybG13cmJhbHBia2MifQ.6QH1q00S5v6MYczAiRLy0g';
 
+// Initialize the map
 var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/dark-v11',
-    center: [-74.01833, 40.70498],
-    zoom: 15,
-    pitch: 45,
-    bearing: -17.6,
+    center: [-73.97997, 40.69785],
+    zoom: 9,
     container: 'map-container',
     antialias: true
 });
 
-map.on('style.load', () => {
-    const layers = map.getStyle().layers;
-    const labelLayerId = layers.find(
-        (layer) => layer.type === 'symbol' && layer.layout['text-field']
-    ).id;
+// Active boroughs for filtering
+var activeBoroughs = {
+    manhattan: true,
+    brooklyn: true,
+    queens: true,
+    bronx: true,
+    statenisland: true
+};
 
-    map.addLayer(
-        {
-            'id': 'add-3d-buildings',
-            'source': 'composite',
-            'source-layer': 'building',
-            'filter': ['==', 'extrude', 'true'],
-            'type': 'fill-extrusion',
-            'minzoom': 15,
-            'paint': {
-                'fill-extrusion-color': '#aaa',
+// Borough centers for zooming
+var boroughCenters = {
+    manhattan: [-73.97718, 40.78175],
+    brooklyn: [-73.93789, 40.65286],
+    queens: [-73.83153, 40.67432],
+    bronx: [-73.84927, 40.85169],
+    statenisland: [-74.15461, 40.57240]
+};
 
-                'fill-extrusion-height': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    15,
-                    0,
-                    15.05,
-                    ['get', 'height']
-                ],
-                'fill-extrusion-base': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    15,
-                    0,
-                    15.05,
-                    ['get', 'min_height']
-                ],
-                'fill-extrusion-opacity': 0.6
-            }
-        },
-        labelLayerId
-    );
-});
+// Function to get the color based on the ENERGY STAR Score
+function getGradeColor(score) {
+    if (score >= 85) return '#238b45'; // A
+    if (score >= 70) return '#74c476'; // B
+    if (score >= 55) return '#bae4b3'; // C
+    if (score < 55 && score !== null) return '#edf8e9'; // D
+    return '#171716'; // No Data or Exempt or Not Covered
+}
 
-map.on('load', function () {
+// Function to add markers
+function addMarkers() {
     ratingData.forEach(function (building) {
-        var el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundColor = getGradeColor(building["ENERGY EFFICIENCY GRADE"]);
+        var score = building["ENERGY STAR Score"];
+        var borough = building["Borough"].toLowerCase();
+        
+        if (activeBoroughs[borough] && (score !== null && score !== undefined)) {
+            var el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundColor = getGradeColor(score);
 
-        var popupContent = `
-                <h3>${building["STREET NAME"]}</h3>
-                <p><strong>DOF Gross Square Footage:</strong> ${building["DOF GROSS SQUARE FOOTAGE"].toLocaleString()} sq ft</p>
-                <p><strong>Energy Star Score:</strong> ${building["ENERGY STAR 1-100 SCORE"]}</p>
-                <p><strong>Energy Efficiency Grade:</strong> ${building["ENERGY EFFICIENCY GRADE"]}</p>
+            var popupContent = `
+                <h3>${building["Address 1"]}</h3>
+                <p><strong>Gross Square Footage:</strong> ${building["Property GFA - Self-Reported (ft²)"].toLocaleString()} sq ft</p>
+                <p><strong>Energy Star Score:</strong> ${score}</p>
+                <p><strong>Site EUI (kBtu/ft²):</strong> ${building["Site EUI (kBtu/ft²)"]}</p>
+                <p><strong>Source EUI (kBtu/ft²):</strong> ${building["Source EUI (kBtu/ft²)"]}</p>
+                <p><strong>GHG Emissions (Metric Tons CO2e):</strong> ${building["Total (Location-Based) GHG Emissions (Metric Tons CO2e)"]}</p>
+                <p><strong>GHG Emissions Intensity (kgCO2e/ft²):</strong> ${building["Total (Location-Based) GHG Emissions Intensity (kgCO2e/ft²)"]}</p>
             `;
 
-        // Create a popup
-        var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(popupContent);
+            // Create a popup
+            var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(popupContent);
 
-        // Add the marker to the map with the popup
-        new mapboxgl.Marker(el)
-            .setLngLat([building.longitude, building.latitude])
-            .setPopup(popup)
-            .addTo(map);
+            // Add the marker to the map with the popup
+            new mapboxgl.Marker(el)
+                .setLngLat([building.Longitude, building.Latitude]) // Use longitude and latitude
+                .setPopup(popup)
+                .addTo(map);
+        }
+    });
+}
+
+// Add markers to the map once it is fully loaded
+map.on('load', function() {
+    // Add borough boundaries as a GeoJSON source
+    map.addSource('borough-boundaries', {
+        type: 'geojson',
+        data: 'data/borough-boundaries.json'
+    });
+
+    // Add borough boundaries line layer
+    map.addLayer({
+        id: 'borough-boundaries-line',
+        type: 'line',
+        source: 'borough-boundaries',
+        paint: {
+            'line-color': '#fff',
+            'line-width': 2
+        }
+    });
+
+    // Add markers to the map
+    addMarkers();
+});
+
+// Update markers based on selected boroughs and adjust the map center and zoom
+document.querySelectorAll('.borough-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        var borough = button.getAttribute('data-borough');
+        activeBoroughs[borough] = !activeBoroughs[borough];
+        button.classList.toggle('active', activeBoroughs[borough]);
+
+        // Adjust the map center and zoom
+        if (activeBoroughs[borough]) {
+            map.flyTo({ center: boroughCenters[borough], zoom: 12 });
+        }
+
+        // Remove all markers
+        document.querySelectorAll('.mapboxgl-marker').forEach(marker => marker.remove());
+        // Add markers based on the selected boroughs
+        addMarkers();
     });
 });
 
-function getGradeColor(grade) {
-    switch (grade) {
-        case 'A': return '#238b45';
-        case 'B': return '#74c476';
-        case 'C': return '#bae4b3';
-        case 'D': return '#edf8fb';
-        case 'F': return '#edf8e9';
-        case 'N': return '#171716';
-        default: return '#171716';
-    }
-};
-
+// Adjust the map when the window is resized
 window.addEventListener('resize', () => {
     map.resize(); // This Mapbox GL JS method re-adjusts the map to fit its container
 });
