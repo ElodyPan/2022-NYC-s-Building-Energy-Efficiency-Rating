@@ -73,15 +73,14 @@
             <div id="map-wrapper">
                 <div id="map-container"></div>
                 <div class="controls">
-                    <h3>Legend</h3>
+                    <h3>Select Legend</h3>
                     <div class="legend">
                         <div>The ENERGY STAR score with its corresponding Ratings: </div>
                         <li><span class="legend-key" style="background-color: #238b45;"></span>A: score is >= 85</li>
                         <li><span class="legend-key" style="background-color: #74c476;"></span>B: score is 70-84</li>
                         <li><span class="legend-key" style="background-color: #bae4b3;"></span>C: score is 55-69</li>
                         <li><span class="legend-key" style="background-color: #edf8e9;"></span>D: score is < 55</li>
-                        <li><span class="legend-key" style="background-color: #171716;"></span>No Data or Exempt or Not Covered
-                        </li>
+                        <li><span class="legend-key" style="background-color: #000000;"></span>No Data/Exempt/Not Covered</li>
                     </div>
 
                     <h3>Select Borough</h3>
@@ -91,6 +90,7 @@
                         <button class="borough-btn" data-borough="QUEENS">Queens</button>
                         <button class="borough-btn" data-borough="BRONX">Bronx</button>
                         <button class="borough-btn" data-borough="STATEN IS">Staten Island</button>
+                        <button class="borough-btn" data-borough="ALL">All Boroughs</button>
                     </div>
                 </div>
 
@@ -98,8 +98,8 @@
         </section>
     </main>
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
-    <script src="rating-data.js"></script>
-    <script src="scripts.js"></script>
+    <script src="js/rating-data.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
